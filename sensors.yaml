@@ -1,0 +1,87 @@
+# SENSORS
+
+  - platform: worldtidesinfo
+    name: "tide_worldtides"
+    api_key: !secret apikey_worldtidesinfo
+    latitude: 26.617
+    longitude: -80.068
+  - platform: darksky
+    name: "weather_darksky"
+    api_key: !secret apikey_darksky
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+  - platform: google_travel_time    
+    name: "travel_gemaire"
+    api_key: !secret apikey_google_travel_time
+    origin: !secret location_home
+    destination: !secret location_matt_work
+  - platform: google_travel_time    
+    name: "travel_awai"
+    api_key: !secret apikey_google_travel_time
+    origin: !secret location_home
+    destination: !secret location_julia_work
+  - platform: systemmonitor
+    resources:
+      - type: memory_use_percent
+      - type: processor_use
+      
+  # SMARTTHINGS
+
+  - platform: mqtt
+    name: "bedroom_temperature"
+    state_topic: "smartthings/Temperature Sensor - Bedroom/temperature"
+    unit_of_measurement: "°F"
+  - platform: mqtt
+    name: "bedroom_humidity"
+    state_topic: "smartthings/Temperature Sensor - Bedroom/humidity"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "bedroom_battery"
+    state_topic: "smartthings/Temperature Sensor - Bedroom/battery"
+    unit_of_measurement: "%"
+
+  - platform: mqtt
+    name: "fridge_temperature"
+    state_topic: "smartthings/Temperature Sensor - Kitchen Refrigerator/temperature"
+    unit_of_measurement: "°F"
+  - platform: mqtt
+    name: "fridge_humidity"
+    state_topic: "smartthings/Temperature Sensor - Kitchen Refrigerator/humidity"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "fridge_battery"
+    state_topic: "smartthings/Temperature Sensor - Kitchen Refrigerator/battery"
+    unit_of_measurement: "%"
+
+  - platform: mqtt
+    name: "porch_door_state"
+    state_topic: "smartthings/Door - Back Porch/contact"
+  - platform: mqtt
+    name: "porch_door_temperature"
+    state_topic: "smartthings/Door - Back Porch/temperature"
+    unit_of_measurement: "°F"
+  - platform: mqtt
+    name: "porch_door_battery"
+    state_topic: "smartthings/Door - Back Porch/battery"
+    unit_of_measurement: "%"
+
+
+  - platform: mqtt
+    name: "front_door_state"
+    state_topic: "smartthings/Door - Front Door/contact"
+  - platform: mqtt
+    name: "front_door_temperature"
+    state_topic: "smartthings/Door - Front Door/temperature"
+    unit_of_measurement: "°F"
+
+
+  - platform: mqtt
+    name: "freezer_state"
+    state_topic: "smartthings/Door - Kitchen Freezer/contact"
+  - platform: mqtt
+    name: "freezer_temperature"
+    state_topic: "smartthings/Door - Kitchen Freezer/temperature"
+    unit_of_measurement: "°F"
+

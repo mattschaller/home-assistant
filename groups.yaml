@@ -1,0 +1,37 @@
+# GROUP
+# Inserted into configuration.yaml
+
+  weather:
+    name: "weather"
+    entities:
+      - sensor.tide_worldtides
+      - sensor.weather_darksky
+  climate:
+    name: "climate"
+    view: no
+    entities:
+      - sensor.bedroom_temperature
+      - sensor.bedroom_humidity
+      - sensor.fridge_temperature
+      - sensor.fridge_humidity
+      - sensor.porch_door_temperature
+      - sensor.front_door_temperature
+      - sensor.freezer_temperature
+  doors:
+    name: "doors"
+    view: no
+    entities:
+      - sensor.porch_door_state
+      - sensor.front_door_state
+      - sensor.freezer_state
+  commute:
+    name: "commute"
+    view: no
+    entities:
+      - sensor.travel_gemaire
+      - sensor.travel_awai
+  system:
+    name: "system"
+    view: no
+    entities:
+      - sensor.systemmonitor

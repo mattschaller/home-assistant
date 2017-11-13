@@ -1,0 +1,101 @@
+#
+# INIT SECTION
+#
+
+homeassistant:
+  name: Home
+  latitude: 26.571016
+  longitude: -80.119341
+  elevation: 6
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include customize.yaml
+
+#
+# BASE SECTION
+#
+
+frontend:
+config:
+http:
+updater:
+discovery:
+conversation:
+history:
+logbook:
+map:
+sun:
+tts:
+  - platform: google
+
+
+#
+# INCLUDES
+#
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+
+
+#
+# CUSTOM SECTION
+#
+
+nest:
+  client_id: !secret nest_clientid
+  client_secret: !secret nest_clientsecret
+
+media_player:
+  - platform: cast
+  - platform: plex
+    entity_namespace: 'plex'
+    include_non_clients: true
+    scan_interval: 5
+    show_all_controls: true
+    use_custom_entity_ids: true
+    use_episode_art: true
+
+ifttt:
+  key: !secret apikey_ifttt
+
+# Pushbullet
+notify:
+  - platform: pushbullet
+    name: "pushbullet"
+    api_key: !secret apikey_pushbullet
+
+# MQTT Bridge for Samsung SmartThings Hub (https://github.com/stjohnjohnson/smartthings-mqtt-bridge)
+mqtt:
+  broker: localhost
+  protocol: 3.1
+  keepalive: 60
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  discovery: true
+  discovery_prefix: smartthings
+
+
+
+# SWITCHES
+switch:
+  # IR BLASTER
+  - platform: broadlink
+    name: "broadlink"
+    host: 192.168.1.96
+    mac: 'b4:43:0d:ef:ae:76'
+
+
+# LIGHTS
+light:
+  - platform: mqtt
+    name: "porch"
+    command_topic: "smartthings/Light - Back Porch/switch"
+    payload_off: "off"
+    payload_on: "on"
+  - platform: mqtt
+    name: "bedroom"
+    command_topic: "smartthings/Light - Bedroom/switch"
+    payload_off: "off"
+    payload_on: "on"
