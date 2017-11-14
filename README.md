@@ -1,6 +1,6 @@
 # home-assistant
 
-Hass.io configuration for local hub running Ubuntu 16.04.  Includes a MQTT bridge to communicate with Samsung SmartThings Hub.  Current IoT ecosystem includes bluetooth, wireless, IR/RF, and ZigBee devices.  Current hubs include Alexa and Samsung Smartthings.
+Hass.io configuration for local hub running Ubuntu 16.04.  Includes a MQTT bridge to communicate with Samsung SmartThings Hub, as well as CI/CD through Travis-ci.  Current IoT ecosystem includes bluetooth, wireless, IR/RF, and ZigBee devices.  Current hubs include Alexa and Samsung Smartthings.
 
 ## Getting Started
 
@@ -45,3 +45,8 @@ pm2 start smartthings-mqtt-bridge
 ```
 Github: https://github.com/stjohnjohnson/smartthings-mqtt-bridge
 Video: https://www.youtube.com/watch?v=6YX1LRL5axE
+
+# To do:
+Security/Backups
+Travis-ci
+Dynamic DNS
