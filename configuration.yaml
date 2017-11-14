@@ -43,6 +43,11 @@ sensor: !include sensors.yaml
 # CUSTOM SECTION
 #
 
+google_domains:
+  domain: !secret googledomains_url
+  username: !secret googledomains_username
+  password: !secret googledomains_password
+
 nest:
   client_id: !secret nest_clientid
   client_secret: !secret nest_clientsecret
