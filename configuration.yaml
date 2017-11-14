@@ -18,16 +18,15 @@ homeassistant:
 frontend:
 config:
 http:
+browser:
 updater:
 discovery:
 conversation:
+wake_on_lan:
 history:
 logbook:
 map:
 sun:
-tts:
-  - platform: google
-
 
 #
 # INCLUDES
@@ -42,6 +41,9 @@ sensor: !include sensors.yaml
 #
 # CUSTOM SECTION
 #
+
+tts:
+  - platform: google
 
 google_domains:
   domain: !secret googledomains_url
@@ -71,7 +73,7 @@ notify:
     name: "pushbullet"
     api_key: !secret apikey_pushbullet
 
-# MQTT Bridge for Samsung SmartThings Hub (https://github.com/stjohnjohnson/smartthings-mqtt-bridge)
+# MQTT  
 mqtt:
   broker: localhost
   protocol: 3.1
@@ -79,9 +81,7 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
   discovery: true
-  discovery_prefix: smartthings
-
-
+  discovery_prefix: smartthings # https://github.com/stjohnjohnson/smartthings-mqtt-bridge
 
 # SWITCHES
 switch:
@@ -104,3 +104,12 @@ light:
     command_topic: "smartthings/Light - Bedroom/switch"
     payload_off: "off"
     payload_on: "on"
+
+#
+# LOGGER
+#
+
+logger:
+  default: info
+  logs:
+    homeassistant.components: info
