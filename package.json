@@ -1,10 +1,12 @@
 {
   "name": "hass",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Hass.io configuration for local hub running Ubuntu 16.04.  Includes a MQTT bridge to communicate with Samsung SmartThings Hub.  Current IoT ecosystem includes bluetooth, wireless, IR/RF, and ZigBee devices.  Current hubs include Alexa and Samsung Smartthings.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified.  Bypassing error.\" && exit 0"
+    "test": "echo \"Error: no test specified.  Bypassing error.\" && exit 0",
+    "install": "exit 0",
+    "deploy": "exit 0"
   },
   "repository": {
     "type": "git",
@@ -15,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/mattschaller/home-assistant/issues"
   },
-  "homepage": "https://github.com/mattschaller/home-assistant#readme",
-  "dependencies": {
-    "openssl": "^1.1.0"
-  }
+  "homepage": "https://github.com/mattschaller/home-assistant#readme"
 }
