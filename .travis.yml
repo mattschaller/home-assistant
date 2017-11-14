@@ -4,7 +4,8 @@ node_js:
   - "7"
 
 addons:
-  ssh_known_hosts: <deploy-host>
+  ssh_known_hosts:
+    - 104.189.109.222
 
 deploy:
   provider: script
