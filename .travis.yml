@@ -3,7 +3,12 @@ node_js:
   - "iojs"
   - "7"
 
-install:
-  - cd ~/.homeassistant/
-  - git fetch
-  - git pull
+addons:
+  ssh_known_hosts: <deploy-host>
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ matt@104.189.109.222:/home/matt/travis/
+  on:
+    branch: master
