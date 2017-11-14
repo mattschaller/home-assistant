@@ -7,6 +7,16 @@ addons:
   ssh_known_hosts:
     - 104.189.109.222
 
+before_install:
+  - sudo apt-get update -qq
+  - sudo mkdir /tmp/
+
+install:
+  - wget https://github.com/mattschaller/home-assistant/archive/0.1.0.tar.gz -O /tmp/hass.tar.gz
+  - tar -xvf /tmp/hass.tar.gz
+  - export PATH=$PATH:$PWD/home-assistant-0.1.0/bin/
+
+
 deploy:
   provider: script
   skip_cleanup: true
