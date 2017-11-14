@@ -2,11 +2,9 @@ language: node_js
 node_js:
   - "iojs"
   - "7"
-
 before_install:
-    - echo 'before_install'
-    - "sudo npm install -g"
+  - mv travis_secrets.yaml secrets.yaml
 install:
-    - echo 'install'
+  - pip3 install homeassistant
 script:
-    - echo 'script'
+  - hass -c . --script check_config
