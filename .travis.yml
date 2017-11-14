@@ -11,5 +11,3 @@ install:
   - npm install
 script:
   - npm test
-deploy:
-  - npm deploy
