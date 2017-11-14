@@ -1,5 +1,5 @@
 {
-  "name": "mattschaller/home-assistant",
+  "name": "hass",
   "version": "0.1.0",
   "description": "Hass.io configuration for local hub running Ubuntu 16.04.  Includes a MQTT bridge to communicate with Samsung SmartThings Hub.  Current IoT ecosystem includes bluetooth, wireless, IR/RF, and ZigBee devices.  Current hubs include Alexa and Samsung Smartthings.",
   "main": "index.js",
