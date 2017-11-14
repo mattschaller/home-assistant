@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mattschaller/home-assistant/issues"
   },
-  "homepage": "https://github.com/mattschaller/home-assistant#readme"
+  "homepage": "https://github.com/mattschaller/home-assistant#readme",
+  "dependencies": {
+    "openssl": "^1.1.0"
+  }
 }
