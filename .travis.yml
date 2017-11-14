@@ -15,7 +15,6 @@ install:
   - tar -xvf /tmp/hass.tar.gz
   - export PATH=$PATH:$PWD/home-assistant-0.1.0/bin/
 
-
 deploy:
   provider: script
   skip_cleanup: true
