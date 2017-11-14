@@ -2,3 +2,12 @@ language: node_js
 node_js:
   - "iojs"
   - "7"
+
+before_install:
+    - "npm install -g update"
+install:
+    - npm install
+script:
+    - cd ~/.homeassistant/
+    - git fetch
+    - git pull
