@@ -3,7 +3,7 @@ node_js:
   - "iojs"
   - "7"
 before_install:
-  - mv travis_secrets.yaml secrets.yaml
+  - mv secrets.yaml
 install:
   - pip3 install homeassistant
 script:
