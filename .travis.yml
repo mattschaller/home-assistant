@@ -4,10 +4,9 @@ node_js:
   - "7"
 
 before_install:
-    - "npm install -g update"
+    - echo 'before_install'
+    - "sudo npm install -g"
 install:
-    - npm install
+    - echo 'install'
 script:
-    - cd ~/.homeassistant/
-    - git fetch
-    - git pull
+    - echo 'script'
