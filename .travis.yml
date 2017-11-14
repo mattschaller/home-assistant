@@ -9,7 +9,6 @@ addons:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo mkdir /tmp/
 
 install:
   - wget https://github.com/mattschaller/home-assistant/archive/0.1.0.tar.gz -O /tmp/hass.tar.gz
