@@ -47,7 +47,10 @@ Github: https://github.com/stjohnjohnson/smartthings-mqtt-bridge
 Video: https://www.youtube.com/watch?v=6YX1LRL5axE
 
 # todos
-Travis-ci - WIP
-Dynamic DNS - WIP
-Launch script
-Security/Backups
+* Travis-ci - WIP
+* Dynamic DNS - WIP
+* Launch script
+* Security/Backups
+
+### Status
+[![Build Status](https://travis-ci.org/mattschaller/home-assistant.png)](https://travis-ci.org/mattschaller/home-assistant)
